@@ -4,6 +4,28 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/cooker_service" />
+        <option name="gradleJvm" value="11.0.3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/cooker_service" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kitchen_service" />
+        <option name="gradleJvm" value="11.0.3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kitchen_service" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/waiter_service" />
         <option name="gradleJvm" value="11.0.3" />
         <option name="modules">

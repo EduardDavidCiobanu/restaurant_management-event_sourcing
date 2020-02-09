@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CookerService.iml" filepath="$PROJECT_DIR$/.idea/modules/CookerService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CookerService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/CookerService.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CookerService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/CookerService.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KitchenService.iml" filepath="$PROJECT_DIR$/.idea/modules/KitchenService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KitchenService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/KitchenService.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KitchenService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/KitchenService.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WaiterService.iml" filepath="$PROJECT_DIR$/.idea/modules/WaiterService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WaiterService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WaiterService.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WaiterService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/WaiterService.test.iml" />

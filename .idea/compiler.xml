@@ -2,6 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="CookerService.main" target="11" />
+      <module name="CookerService.test" target="11" />
+      <module name="KitchenService.main" target="11" />
+      <module name="KitchenService.test" target="11" />
       <module name="WaiterService.main" target="11" />
       <module name="WaiterService.test" target="11" />
     </bytecodeTargetLevel>
