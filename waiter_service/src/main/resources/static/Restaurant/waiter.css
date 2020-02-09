@@ -1,0 +1,32 @@
+.table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-remove {
+    color: #700;
+    cursor: pointer;
+}
+.table-remove:hover {
+    color: #f00;
+}
+
+.table-edit {
+    color: #ffb710;
+    cursor: pointer;
+}
+.table-edit:hover {
+    color: #ffda14;
+}
+
+.table-add:hover {
+    color: #0b0;
+}
+
+.order {
+    border-left-style: solid;
+    border-top-style: dashed;
+    border-right-style: solid;
+    border-bottom-style: dashed;
+    border-color: darkorange;
+}

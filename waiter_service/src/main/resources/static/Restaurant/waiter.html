@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Pagina Chelnerului</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="objects.js?v=1"></script>
+    <script type="text/javascript" src="waiter.js?v=1"></script>
+    <link rel="stylesheet" type="text/css" href="waiter.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <h2 id="start">Pagina Web a chelnerului</h2>
+    <p>Preluare de comenzi și gestionarea comenzilor active</p>
+    <div id="logInfo"></div>
+    <hr>
+
+    <div id="alertArea"></div>
+
+    <button id="newOrderBtn" type="button" class="btn btn-info" data-toggle="collapse" data-target="#newOrder">Comandă nouă</button>
+    <div id="newOrder" class="collapse">
+        <br>
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#clearOrderList">Șterge lista actuală</button>
+        <div class="modal" id="clearOrderList">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Confirmați ștergerea?</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button id="clearOrderFormBtn" class="btn btn-danger" data-dismiss="modal">Confirm ștergerea</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div id="newProductForm">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Numărul mesei</span>
+                </div>
+                <select id="tableNo"></select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Categoria</span>
+                </div>
+                <select id="mealType"></select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Produsul</span>
+                </div>
+                <select id="meals"></select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Cantitatea</span>
+                </div>
+<!--                <input id="count" class="form-control" type="number" value="1">-->
+                <select id="count">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Specificații</span>
+                </div>
+                <input id="specs" class="form-control" value="-">
+            </div>
+        </div>
+        <button id="addProductBtn" class="btn btn-success">Adaugă produsul</button>
+        <hr>
+        <h4>Lista de produse</h4>
+        <table id="orderList" class="table">
+            <thead>
+            <tr>
+                <th>Prod.</th>
+                <th>Cant.</th>
+                <th>Spec.</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <button id="orderSendBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#orderConfirmation">Trimite comanda</button>
+
+        <div class="modal" id="orderConfirmation">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Rezumatul comenzii</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div id="orderResume" class="modal-body"></div>
+
+                    <div class="modal-footer">
+                        <button id="orderConfirmationBtn" class="btn btn-success" data-dismiss="modal">Confirm comanda</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="editOrder" class="jumbotron" style="display: none;">
+        <h4>Editare comandă</h4>
+        <button id="hideEditOrderBtn" class="btn btn-danger">Închide editarea</button>
+        <br><br>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Numărul mesei</span>
+            </div>
+            <select id="editO-tableNo"></select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Categoria</span>
+            </div>
+            <select id="editO-mealType"></select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Produsul</span>
+            </div>
+            <select id="editO-meals"></select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Cantitatea</span>
+            </div>
+<!--            <input id="editO-count" class="form-control" type="number" value="1">-->
+            <select id="editO-count">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Specificații</span>
+            </div>
+            <input id="editO-specs" class="form-control" value="-">
+        </div>
+        <button id="editO-addProductBtn" class="btn btn-success">Adaugă produsul</button>
+        <hr>
+        <h4>Lista de produse</h4>
+        <table id="editOrderList" class="table">
+            <thead>
+                <tr>
+                    <th>Prod.</th>
+                    <th>Cant.</th>
+                    <th>Spec.</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button id="editOrderSendBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editOrderConfirmation">Trimite comanda</button>
+
+        <div class="modal" id="editOrderConfirmation">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Confirmarea editării</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+<!--                    <div id="editOrderResume" class="modal-body"></div>-->
+                    <div class="modal-footer">
+                        <button id="editOrderConfirmationBtn" class="btn btn-success" data-dismiss="modal">Confirm editarea comenzii</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Comenzi active</h3>
+    <div id="preparedOrdersNotificationsArea"></div>
+    <div id="activeOrders"></div>
+    <br><br><br><br><br>
+
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center fixed-bottom">
+        <a class="nav-link" href="#start">Comandă nouă</a>
+        <button id="refreshActiveOrders" type="button" class="btn btn-link">Refresh comenzi active</button>
+        <button id="logOut" type="button" class="btn btn-link">Delogare</button>
+    </nav>
+
+</div>
+</body>
+</html>
